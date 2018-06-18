@@ -36,7 +36,6 @@ THE SOFTWARE.
           <test:bar/>
           <j:if test="${it.failCount!=0}">
             <h2>${%All Failed Tests}</h2>
-            <h2>And that too</h2>
             <table class="pane sortable bigtable stripped">
               <tr>
                 <td class="pane-header">${%Test Name}</td>
@@ -51,7 +50,7 @@ THE SOFTWARE.
                       ${f.durationString}
                     </td>
                     <td class="pane" style="text-align:right;">
-                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age} ${f.getRelativePathFrom(job)}</a>
+                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">testing</a>
                     </td>
                   </tr>
                 </j:forEach>
