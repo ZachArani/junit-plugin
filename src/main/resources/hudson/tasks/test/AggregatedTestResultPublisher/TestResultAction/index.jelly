@@ -36,6 +36,7 @@ THE SOFTWARE.
           <test:bar/>
           <j:if test="${it.failCount!=0}">
             <h2>${%All Failed Tests}</h2>
+            <h2>And that too</h2>
             <table class="pane sortable bigtable stripped">
               <tr>
                 <td class="pane-header">${%Test Name}</td>
