@@ -45,12 +45,12 @@ THE SOFTWARE.
               <j:forEach var="job" items="${it.individuals}">
                 <j:forEach var="f" items="${job.failedTests}" varStatus="i">
                   <tr>
-                    <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(job)}"/></td>
+                    <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(job.getTestResult())}"/></td>
                     <td class="pane no-wrap" style="text-align:right;" data="${f.duration}">
                       ${f.durationString}
                     </td>
                     <td class="pane" style="text-align:right;">
-                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${job}</a>
+                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age}</a>
                     </td>
                   </tr>
                 </j:forEach>
