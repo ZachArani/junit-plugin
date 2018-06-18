@@ -43,14 +43,14 @@ THE SOFTWARE.
                 <td class="pane-header" style="width:3em">${%Age}</td>
               </tr>
               <j:forEach var="job" items="${it.individuals}">
-                <j:forEach var="f" items="${job.failedTests}" varStatus="job">
+                <j:forEach var="f" items="${job.failedTests}" varStatus="i">
                   <tr>
-                    <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(job)}"/>${f.getRelativePathFrom(job)}</td>
+                    <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(job)}"/></td>
                     <td class="pane no-wrap" style="text-align:right;" data="${f.duration}">
                       ${f.durationString}
                     </td>
                     <td class="pane" style="text-align:right;">
-                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age}</a>
+                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age} ${f.getRelativePathFrom(job)}</a>
                     </td>
                   </tr>
                 </j:forEach>
