@@ -42,16 +42,18 @@ THE SOFTWARE.
                 <td class="pane-header" style="width:4em">${%Duration}</td>
                 <td class="pane-header" style="width:3em">${%Age}</td>
               </tr>
-              <j:forEach var="f" items="${it.failedTests}" varStatus="i">
-                <tr>
-                  <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(it)}"/></td>
-                  <td class="pane no-wrap" style="text-align:right;" data="${f.duration}">
-                    ${f.durationString}
-                  </td>
-                  <td class="pane" style="text-align:right;">
-                    <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age}</a>
-                  </td>
-                </tr>
+              <j:forEach var="job" items="${it.individuals}">
+                <j:forEach var="f" items="${job.failedTests}" varStatus="i">
+                  <tr>
+                    <td class="pane no-wrap"><t:failed-test result="${f}" url="${f.getRelativePathFrom(job)}"/></td>
+                    <td class="pane no-wrap" style="text-align:right;" data="${f.duration}">
+                      ${f.durationString}
+                    </td>
+                    <td class="pane" style="text-align:right;">
+                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age}</a>
+                    </td>
+                  </tr>
+                </j:forEach>
               </j:forEach>
             </table>
           </j:if>
