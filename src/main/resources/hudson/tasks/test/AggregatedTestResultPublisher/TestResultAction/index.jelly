@@ -50,7 +50,7 @@ THE SOFTWARE.
                       ${f.durationString}
                     </td>
                     <td class="pane" style="text-align:right;">
-                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${f.age}</a>
+                      <a href="${rootURL}/${f.failedSinceRun.url}" class="model-link inside">${job.getTestResultPath()}</a>
                     </td>
                   </tr>
                 </j:forEach>
